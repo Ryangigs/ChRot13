@@ -311,3 +311,26 @@ def main():
     """Main entry point"""
     # Set up signal handler for Ctrl+C
     signal.signal(signal.SIGINT, signal_handler)
+
+    # Create parser
+    parser = argparse.ArgumentParser(
+        description='ChRot13 - Advanced ROT13 Encoder/Decoder',
+        add_help=False,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    
+    parser.add_argument('-h', '--help', action='store_true', help='Show help message')
+    parser.add_argument('-v', '--version', action='store_true', help='Show version')
+    parser.add_argument('-e', '--encode', action='store_true', help='Encode text')
+    parser.add_argument('-d', '--decode', action='store_true', help='Decode text')
+    parser.add_argument('-f', '--file', type=str, help='Input file (use - for stdin)')
+    parser.add_argument('-o', '--output', type=str, help='Output file')
+    parser.add_argument('--text', type=str, help='Text to process')
+    parser.add_argument('--quiet', action='store_true', help='Suppress all status messages')
+    parser.add_argument('--verbose', action='store_true', help='Show detailed status messages')
+    parser.add_argument('--no-color', action='store_true', help='Disable colored output')
+    parser.add_argument('--banner', action='store_true', help='Show banner only')
+    
+    # Parse arguments
+    args, remaining = parser.parse_known_args()
+
