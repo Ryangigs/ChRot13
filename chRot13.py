@@ -176,3 +176,18 @@ class ChRot13:
         except Exception as e:
             print(Decorators.error(f"Unexpected error: {str(e)}", no_color), file=sys.stderr)
             sys.exit(1)
+
+    def process_text(self, text: str, decode: bool = False, output: Optional[str] = None,
+                     quiet: bool = False, verbose: bool = False, no_color: bool = False) -> None:
+        """Process direct text input"""
+        if verbose and not quiet:
+            print(Decorators.info("Processing text input...", no_color), file=sys.stderr)
+        result = self.rot13(text, decode, quiet, no_color)
+        
+        if output:
+            with open(output, 'w', encoding='utf-8') as f:
+                f.write(result)
+            if not quiet:
+                print(Decorators.success(f"Output written to {output}", no_color), file=sys.stderr)
+        else:
+            sys.stdout.write(result)
