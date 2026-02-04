@@ -7,3 +7,10 @@
                         # ChRot13 - Advanced ROT13 Encoder/Decoder Tool #
                         #################################################
 
+import sys
+import os
+import argparse
+import signal
+import platform
+from typing import Optional, TextIO
+
