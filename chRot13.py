@@ -302,3 +302,8 @@ class ChRot13:
         
         print(help_text, file=sys.stderr)
 
+def signal_handler(sig, frame):
+    """Handle Ctrl+C gracefully"""
+    print(f"\n{Decorators.info('Operation interrupted by user')}", file=sys.stderr)
+    sys.exit(0)
+
