@@ -204,22 +204,101 @@ class ChRot13:
             sys.stdout.write(result)
     
     def show_banner(self, no_color: bool = False) -> None:
-        """Display the tool banner"""
-        banner = ''
+        """Display the tool banner with optional color support"""
+        # Define color variables based on no_color flag
+        color_prefix = '' if no_color else Colors.ERROR
+        
+        # Use triple-quoted string for better readability of the ASCII art
+        banner_lines = [
+            " ________  ___  ___  ________  ________  _________   _____  ________     ",
+            "|\\   ____\\|\\  \\|\\  \\|\\   __  \\|\\   __  \\|\\___   ___\\/ __  \\|\\_____  \\    ",
+            "\\ \\  \\___|\\ \\  \\\\\\  \\ \\  \\|\\  \\ \\  \\|\\  \\|___ \\  \\_|\\/_|\\  \\|____|\\ /_   ",
+            " \\ \\  \\    \\ \\   __  \\ \\   _  _\\ \\  \\\\\\  \\   \\ \\  \\\\|/ \\ \\  \\    \\|\\  \\  ",
+            "  \\ \\  \\____\\ \\  \\ \\  \\ \\  \\\\  \\\\ \\  \\\\\\  \\   \\ \\  \\    \\ \\  \\  __\\_\\  \\ ",
+            "   \\ \\_______\\ \\__\\ \\__\\ \\__\\\\ _\\\\ \\_______\\   \\ \\__\\    \\ \\__\\|\\_______\\",
+            "    \\|_______|\\|__|\\|__|\\|__|\\|__|\\|_______|    \\|__|     \\|__|\\|_______|",
+            ""  # Empty line for spacing
+        ]
+        
+        # Apply color to each line and join
+        colored_banner = '\n'.join(f"{color_prefix}{line}" for line in banner_lines)
+        print(colored_banner, file=sys.stderr)
 
-        green = '' if no_color else Colors.GREEN
-        blue = '' if no_color else Colors.BLUE
-        error = '' if no_color else Colors.ERROR
-        header = '' if no_color else Colors.HEADER
-        warning = '' if no_color else Colors.WARNING
 
-        banner += f"{error} ________  ___  ___  ________  ________  _________   _____  ________     "
-        banner += "\n|\\   ____\\|\\  \\|\\  \\|\\   __  \\|\\   __  \\|\\___   ___\\/ __  \\|\\_____  \\    "
-        banner += "\n\\ \\  \\___|\\ \\  \\\\\\  \\ \\  \\|\\  \\ \\  \\|\\  \\|___ \\  \\_|\\/_|\\  \\|____|\\ /_   "
-        banner += "\n \\ \\  \\    \\ \\   __  \\ \\   _  _\\ \\  \\\\\\  \\   \\ \\  \\\\|/ \\ \\  \\    \\|\\  \\  "
-        banner += "\n  \\ \\  \\____\\ \\  \\ \\  \\ \\  \\\\  \\\\ \\  \\\\\\  \\   \\ \\  \\    \\ \\  \\  __\\_\\  \\ "
-        banner += "\n   \\ \\_______\\ \\__\\ \\__\\ \\__\\\\ _\\\\ \\_______\\   \\ \\__\\    \\ \\__\\|\\_______\\"
-        banner += "\n    \\|_______|\\|__|\\|__|\\|__|\\|__|\\|_______|    \\|__|     \\|__|\\|_______|"
-        banner += "\n"
+    def show_help(self, no_color: bool = False) -> None:
+        """Display help information with optional color support"""
+        
+        # Define common text blocks
+        usage_text = """USAGE:
+        python chRot13.py [OPTIONS] [FILE/TEXT]"""
+        
+        examples_text = """EXAMPLES:
+        Encode text:
+            echo "Hello World" | python chRot13.py
+            python chRot13.py -e "Hello World"
+            python chRot13.py -e -f input.txt -o encoded.txt
+        
+        Decode text:
+            echo "Uryyb Jbeyq" | python chRot13.py -d
+            python chRot13.py -d "Uryyb Jbeyq"
+            cat encoded.txt | python chRot13.py -d
+        
+        File operations:
+            python chRot13.py -e -f input.txt
+            python chRot13.py -d -f encoded.txt -o decoded.txt"""
+        
+        options_text = """OPTIONS:
+        -h, --help          Show this help message
+        -v, --version       Show version information
+        -e, --encode        Encode text (default mode)
+        -d, --decode        Decode text
+        -f, --file FILE     Process a file
+        -o, --output FILE   Write output to file
+        --text TEXT         Process direct text input
+        --quiet             Suppress all status messages
+        --verbose           Show detailed status messages
+        --no-color          Disable colored output
+        --banner            Show banner only"""
+        
+        notes_text = """NOTES:
+        • ROT13 is its own inverse: encoding twice returns original text
+        • Non-alphabetic characters are left unchanged
+        • Can process files, stdin, or direct text input
+        • Supports output redirection to files"""
+        
+        if no_color:
+            help_text = f"""
+    {usage_text}
 
-        print(banner, file=sys.stderr)
+    {examples_text}
+
+    {options_text}
+
+    {notes_text}
+    """
+        else:
+            help_text = f"""
+    {Colors.BOLD}{usage_text}{Colors.ENDC}
+
+    {Colors.BOLD}EXAMPLES:{Colors.ENDC}
+        {Colors.GREEN}Encode text:{Colors.ENDC}
+            echo "Hello World" | python chRot13.py
+            python chRot13.py -e "Hello World"
+            python chRot13.py -e -f input.txt -o encoded.txt
+        
+        {Colors.GREEN}Decode text:{Colors.ENDC}
+            echo "Uryyb Jbeyq" | python chRot13.py -d
+            python chRot13.py -d "Uryyb Jbeyq"
+            cat encoded.txt | python chRot13.py -d
+        
+        {Colors.GREEN}File operations:{Colors.ENDC}
+            python chRot13.py -e -f input.txt
+            python chRot13.py -d -f encoded.txt -o decoded.txt
+
+    {Colors.BOLD}{options_text}{Colors.ENDC}
+
+    {Colors.BOLD}{notes_text}{Colors.ENDC}
+    """
+        
+        print(help_text, file=sys.stderr)
+
