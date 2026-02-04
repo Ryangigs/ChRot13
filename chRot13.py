@@ -405,3 +405,6 @@ def main():
     except Exception as e:
         print(Decorators.error(f"Fatal error: {str(e)}", args.no_color), file=sys.stderr)
         sys.exit(1)
+
+if __name__ == "__main__":
+    main()
