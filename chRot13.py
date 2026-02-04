@@ -254,9 +254,9 @@ class ChRot13:
         -d, --decode        Decode text
         -f, --file FILE     Process a file
         -o, --output FILE   Write output to file
-        --text TEXT         Process direct text input
-        --quiet             Suppress all status messages
-        --verbose           Show detailed status messages
+        -q, --quiet         Suppress all status messages
+        -V, --verbose       Show detailed status messages
+        -t, --text TEXT     Process direct text input
         --no-color          Disable colored output
         --banner            Show banner only"""
         
