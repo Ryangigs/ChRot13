@@ -140,4 +140,33 @@ python chRot13.py --verbose --no-color -d -f encoded.txt -o decoded.txt
 | Permission denied when writing files | Check file permissions or run as administrator |
 | Unicode errors with files | Files are read as **UTF-8**, ensure correct encoding |
 | Script not executable | Run with `python chRot13.py` or make executable with `chmod +x` |
+---
+## ❤️ Support the Project
+If you find this tool useful, consider donating:
+
+| **Cryptocurrency** | **Address** |
+|--------------------|-------------|
+| **BTC** | `bc1ql4syps7qpa3djqrxwht3g66tldyh4j7qsyjkq0` |
+| **ETH** | `0xfddbd535a4ad28792cbebceee3d6982d774e6d13` |
+| **USDT** | `3Cq6HRQsiwZFmPEQfG9eJkZE2QGChvf2VN` |
+
+> 💖 Your support helps keep the project alive and improving!
+
+
+---
+## ⚠️ Disclaimer
+**This tool is for educational and authorized security testing purposes only.**
+
+* ⚠️ **Unauthorized access to computer systems is illegal**
+* ⚠️ **Only use this tool on systems you own or have explicit written permission to test**
+* ⚠️ **The authors are not responsible for any misuse of this software**
+* ⚠️ **Use responsibly and in compliance with applicable laws**
+
+**By using this tool, you agree to use it only for legitimate security testing and educational purposes.**
+
+---
+## 🚨 Reporting Issues
+> If you encounter bugs, configuration issues, or unexpected behavior, please reach out: 📩 [Ch4120N@Proton.me](mailto:Ch4120N@Proton.me) or use Issues in this repository
+
+---
 
