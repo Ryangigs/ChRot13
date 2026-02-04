@@ -21,9 +21,9 @@
 ## 📋 Requirements
 * Python 3.6 or higher
 * No external dependencies required
-
+---
 ## 🚀 Installation
-### Method 1: Direct Download
+### **Method 1: Direct Download**
 ```bash
 # Download the script
 curl -O https://raw.githubusercontent.com/Ch4120N/ChRot13/main/chRot13.py
@@ -32,12 +32,12 @@ curl -O https://raw.githubusercontent.com/Ch4120N/ChRot13/main/chRot13.py
 chmod +x chRot13.py
 ```
 
-### Method 2: Clone Repository
+### **Method 2: Clone Repository**
 ```bash
 git clone https://github.com/Ch4120N/ChRot13.git
 cd ChRot13/
 ```
-
+---
 ## 📖 Usage
 ### Basic Examples
 ```bash
@@ -78,27 +78,27 @@ python chRot13.py --no-color "Hello World"
 # Combine options
 python chRot13.py --verbose --no-color -d -f encoded.txt -o decoded.txt
 ```
-
+---
 ## 🛠️ Command Line Options
 | Option | Description |
 |--------|-------------|
-| -h, --help | Show help message| |
-| -v, --version | Show version information |
-| -e, --encode | Encode text (default mode) |
-| -d, --decode | Decode text |
-| -f, --file FILE | Process a file (use - for stdin) |
-| -o, --output FILE	| Write output to file |
-| -t, --text TEXT | Process direct text input |
-| -q, --quiet | Suppress all status messages |
-| -V, --verbose | Show detailed status messages |
-| --no-color | Disable colored output |
-| --banner | Show banner only |
-
+| `-h`, `--help` | Show help message| |
+| `-v`, `--version` | Show version information |
+| `-e`, `--encode` | Encode text (default mode) |
+| `-d`, `--decode` | Decode text |
+| `-f`, `--file FILE` | Process a file (use - for stdin) |
+| `-o`, `--output FILE`	| Write output to file |
+| `-t`, `--text TEXT` | Process direct text input |
+| `-q`, `--quiet` | Suppress all status messages |
+| `-V`, `--verbose` | Show detailed status messages |
+| `--no-color` | Disable colored output |
+| `--banner` | Show banner only |
+---
 ## 🔧 Advanced Features
 ### Color Support
-* Linux/macOS: ANSI escape codes
-* Windows: Windows API for color support (Windows 7+)
-* Automatic detection: Disables colors when piping or redirected
+* **Linux/macOS**: ANSI escape codes
+* **Windows**: Windows API for color support (Windows 7+)
+* **Automatic detection**: Disables colors when piping or redirected
 
 ### Error Handling
 * File not found errors
@@ -110,18 +110,14 @@ python chRot13.py --verbose --no-color -d -f encoded.txt -o decoded.txt
 * Memory efficient for large files
 * Stream processing for stdin
 * Fast character transformation
-
+---
 ## 🐛 Troubleshooting
 
-**Issue**: Colors not working on Windows
-**Solution**: Ensure you're running on Windows 10+ or use `--no-color`
-
-**Issue**: Permission denied when writing files
-**Solution**: Check file permissions or run as administrator
-
-**Issue**: Unicode errors with files
-**Solution**: Files are read as UTF-8, ensure correct encoding
-
-**Issue**: Script not executable
-**Solution**: Run with `python chRot13.py` or make executable with `chmod +x`
+| **Issue** | **Solution** |
+|-----------|--------------|
+| Colors not working on Windows | Ensure you're running on Windows 10+ or use `--no-color` |
+| 
+| Permission denied when writing files | Check file permissions or run as administrator |
+| Unicode errors with files | Files are read as **UTF-8**, ensure correct encoding |
+| Script not executable | Run with `python chRot13.py` or make executable with `chmod +x` |
 
