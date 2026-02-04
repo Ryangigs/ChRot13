@@ -353,3 +353,9 @@ def main():
             version_msg = f"{Colors.GREEN}ChRot13 v{tool.version}{Colors.ENDC} by {Colors.BLUE}{tool.author}{Colors.ENDC}"
         print(version_msg, file=sys.stderr)
         sys.exit(0)
+    
+    # Show help if requested or no arguments
+    if args.help or (not args.file and not args.text and sys.stdin.isatty() and not remaining):
+        tool.show_banner(args.no_color)
+        tool.show_help(args.no_color)
+        sys.exit(0)
