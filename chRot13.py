@@ -372,3 +372,36 @@ def main():
     # Show banner for verbose mode
     if args.verbose and not args.quiet:
         tool.show_banner(args.no_color)
+
+
+    # Process input
+    try:
+        if args.file:
+            # Process file
+            tool.process_file(args.file, decode, args.output, args.quiet, args.verbose, args.no_color)
+        
+        elif args.text:
+            # Process direct text
+            tool.process_text(args.text, decode, args.output, args.quiet, args.verbose, args.no_color)
+        
+        elif remaining:
+            # Process text from positional arguments
+            text = ' '.join(remaining)
+            tool.process_text(text, decode, args.output, args.quiet, args.verbose, args.no_color)
+        
+        elif not sys.stdin.isatty():
+            # Process from stdin
+            tool.process_file('-', decode, args.output, args.quiet, args.verbose, args.no_color)
+        
+        else:
+            # No input provided
+            print(Decorators.error("No input provided", args.no_color), file=sys.stderr)
+            tool.show_help(args.no_color)
+            sys.exit(1)
+            
+    except KeyboardInterrupt:
+        print(f"\n{Decorators.info('Operation cancelled', args.no_color)}", file=sys.stderr)
+        sys.exit(0)
+    except Exception as e:
+        print(Decorators.error(f"Fatal error: {str(e)}", args.no_color), file=sys.stderr)
+        sys.exit(1)
