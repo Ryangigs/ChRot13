@@ -73,4 +73,10 @@ class Colors:
 
 
 class Decorators:
-    pass
+    """Console decorators for status messages"""
+    
+    @staticmethod
+    def success(msg: str, no_color: bool = False) -> str:
+        if no_color:
+            return f"[ + ] {msg}"
+        return f"{Colors.SUCCESS}[ + ]{Colors.ENDC} {msg}"
