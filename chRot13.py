@@ -359,3 +359,12 @@ def main():
         tool.show_banner(args.no_color)
         tool.show_help(args.no_color)
         sys.exit(0)
+    
+    
+    # Determine mode (default to encode)
+    decode = args.decode
+    encode = args.encode
+    
+    if decode and encode:
+        print(Decorators.error("Cannot specify both --encode and --decode", args.no_color), file=sys.stderr)
+        sys.exit(1)
