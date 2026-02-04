@@ -99,3 +99,12 @@ class Decorators:
             return f"[ * ] {msg}"
         return f"{Colors.BLUE}[ * ]{Colors.ENDC} {msg}"
 
+class ChRot13:
+    """Main ROT13 processing class"""
+
+    def __init__(self):
+        self.version = "1.0.0"
+        self.author = "Ch4120N"
+        self.project = "ChRot13"
+    
+    
