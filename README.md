@@ -170,3 +170,10 @@ If you find this tool useful, consider donating:
 
 ---
 
+<div align='center'>
+
+**⭐ If you like this project, don't forget to give it a star!**
+
+Made with ❤️ by Ch4120N
+
+</div>
