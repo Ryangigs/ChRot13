@@ -135,3 +135,44 @@ class ChRot13:
                 print(Decorators.success(f"Encoded {len(text)} characters", no_color), file=sys.stderr)
         
         return result
+
+    def process_file(self, filepath: str, decode: bool = False, output: Optional[str] = None, 
+                     quiet: bool = False, verbose: bool = False, no_color: bool = False) -> None:
+        """Process a file with ROT13"""
+        try:
+            if filepath == '-':
+                # Read from stdin
+                if verbose and not quiet:
+                    print(Decorators.info("Reading from standard input...", no_color), file=sys.stderr)
+                text = sys.stdin.read()
+            else:
+                if not os.path.exists(filepath):
+                    print(Decorators.error(f"File not found: {filepath}", no_color), file=sys.stderr)
+                    sys.exit(1)
+                
+                if verbose and not quiet:
+                    print(Decorators.info(f"Processing file: {filepath}", no_color), file=sys.stderr)
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    text = f.read()
+            
+            result = self.rot13(text, decode, quiet, no_color)
+            
+            if output:
+                if verbose and not quiet:
+                    print(Decorators.info(f"Writing output to: {output}", no_color), file=sys.stderr)
+                with open(output, 'w', encoding='utf-8') as f:
+                    f.write(result)
+                if not quiet:
+                    print(Decorators.success(f"Output written to {output}", no_color), file=sys.stderr)
+            else:
+                sys.stdout.write(result)
+                
+        except PermissionError:
+            print(Decorators.error(f"Permission denied: {filepath}", no_color), file=sys.stderr)
+            sys.exit(1)
+        except UnicodeDecodeError:
+            print(Decorators.error(f"File encoding error: {filepath}", no_color), file=sys.stderr)
+            sys.exit(1)
+        except Exception as e:
+            print(Decorators.error(f"Unexpected error: {str(e)}", no_color), file=sys.stderr)
+            sys.exit(1)
