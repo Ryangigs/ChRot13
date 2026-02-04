@@ -177,6 +177,7 @@ class ChRot13:
                     print(Decorators.success(f"Output written to {output}", no_color), file=sys.stderr)
             else:
                 sys.stdout.write(result)
+                sys.stdout.write('\n')
                 
         except PermissionError:
             print(Decorators.error(f"Permission denied: {filepath}", no_color), file=sys.stderr)
@@ -202,6 +203,7 @@ class ChRot13:
                 print(Decorators.success(f"Output written to {output}", no_color), file=sys.stderr)
         else:
             sys.stdout.write(result)
+            sys.stdout.write('\n')
     
     def show_banner(self, no_color: bool = False) -> None:
         """Display the tool banner with optional color support"""
