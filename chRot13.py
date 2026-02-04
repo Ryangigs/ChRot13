@@ -340,3 +340,9 @@ def main():
     
     # Create ChRot13 instance
     tool = ChRot13()
+
+    # Show banner if requested
+    if args.banner:
+        tool.show_banner(args.no_color)
+        sys.exit(0)
+    
