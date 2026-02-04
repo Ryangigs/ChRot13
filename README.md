@@ -16,7 +16,9 @@
 ## 👨‍💻 Project Programmer
 > Ch4120N — [Ch4120N@Proton.me](mailto:Ch4120N@Proton.me)
 ---
+
 ## 🖼️ Screenshots
+![Screenshot - Usage](./images/usage.png)
 
 ---
 ## 💻 Supported Platforms
