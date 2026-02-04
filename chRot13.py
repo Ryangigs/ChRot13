@@ -334,3 +334,9 @@ def main():
     # Parse arguments
     args, remaining = parser.parse_known_args()
 
+    
+    # Initialize colors based on arguments and platform
+    Colors.init_colors(args.no_color)
+    
+    # Create ChRot13 instance
+    tool = ChRot13()
