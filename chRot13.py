@@ -307,3 +307,7 @@ def signal_handler(sig, frame):
     print(f"\n{Decorators.info('Operation interrupted by user')}", file=sys.stderr)
     sys.exit(0)
 
+def main():
+    """Main entry point"""
+    # Set up signal handler for Ctrl+C
+    signal.signal(signal.SIGINT, signal_handler)
