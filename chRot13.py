@@ -307,8 +307,7 @@ def signal_handler(sig, frame):
     print(f"\n{Decorators.info('Operation interrupted by user')}", file=sys.stderr)
     sys.exit(0)
 
-def main():
-    """Main entry point"""
+if __name__ == "__main__":
     # Set up signal handler for Ctrl+C
     signal.signal(signal.SIGINT, signal_handler)
 
@@ -405,6 +404,3 @@ def main():
     except Exception as e:
         print(Decorators.error(f"Fatal error: {str(e)}", args.no_color), file=sys.stderr)
         sys.exit(1)
-
-if __name__ == "__main__":
-    main()
