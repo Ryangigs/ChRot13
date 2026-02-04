@@ -14,3 +14,6 @@ import signal
 import platform
 from typing import Optional, TextIO
 
+
+class Colors:
+    pass
