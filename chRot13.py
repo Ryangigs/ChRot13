@@ -70,3 +70,7 @@ class Colors:
         Colors.SUCCESS = '\033[92m'
         Colors.ERROR = '\033[91m'
         Colors.INFO = '\033[94m'
+
+
+class Decorators:
+    pass
